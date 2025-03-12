@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+requests
+beautifulsoup4
+kafka-python
+python-dotenv==1.0.0

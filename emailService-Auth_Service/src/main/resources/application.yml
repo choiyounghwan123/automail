@@ -1,0 +1,20 @@
+spring:
+  rabbitmq:
+    host: rabbitmq # RabbitMQ 컨테이너 이름
+    port: 5672
+    username: user
+    password: password
+    listener:
+      simple:
+        auto-startup: true
+        acknowledge-mode: auto
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.cloud.gateway: DEBUG

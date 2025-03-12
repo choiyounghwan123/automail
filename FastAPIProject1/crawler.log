@@ -1,0 +1,282 @@
+2025-03-01 19:26:34,616 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do
+2025-03-01 19:26:34,617 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do
+2025-03-01 19:26:35,017 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do
+2025-03-01 19:26:35,018 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do
+2025-03-01 19:26:35,018 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do
+2025-03-01 19:26:36,763 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do
+2025-03-01 19:26:36,790 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do
+2025-03-01 19:26:37,157 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do
+2025-03-01 19:26:37,159 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do
+2025-03-01 19:26:37,190 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do
+2025-03-01 19:26:40,914 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do
+2025-03-01 19:26:40,924 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do
+2025-03-01 19:26:41,066 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do
+2025-03-01 19:26:41,069 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do
+2025-03-01 19:26:41,294 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do
+2025-03-01 19:26:41,305 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do
+2025-03-01 19:26:41,365 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do
+2025-03-01 19:26:41,425 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do
+2025-03-01 19:26:41,442 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do
+2025-03-01 19:26:41,511 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do
+2025-03-01 19:26:43,300 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do
+2025-03-01 19:26:43,302 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do
+2025-03-01 19:26:43,574 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do
+2025-03-01 19:26:43,599 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do
+2025-03-01 19:26:43,654 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do
+2025-03-01 19:26:47,495 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do
+2025-03-01 19:26:47,498 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do
+2025-03-01 19:26:47,704 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do
+2025-03-01 19:26:47,757 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do
+2025-03-01 19:26:47,794 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do
+2025-03-01 19:27:23,177 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do
+2025-03-01 19:27:23,183 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do
+2025-03-01 19:27:23,185 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do
+2025-03-01 19:27:23,185 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do
+2025-03-01 19:27:23,186 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do
+2025-03-01 19:27:25,359 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do
+2025-03-01 19:27:25,364 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do
+2025-03-01 19:27:25,367 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do
+2025-03-01 19:27:25,378 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do
+2025-03-01 19:27:25,443 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do
+2025-03-01 19:27:29,521 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do
+2025-03-01 19:27:29,527 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do
+2025-03-01 19:27:29,592 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do
+2025-03-01 19:27:29,600 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do
+2025-03-01 19:27:29,601 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do
+2025-03-01 19:27:29,699 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do
+2025-03-01 19:27:29,700 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do
+2025-03-01 19:27:29,911 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do
+2025-03-01 19:27:29,912 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do
+2025-03-01 19:27:29,928 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do, attempt 1/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do
+2025-03-01 19:27:31,846 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do
+2025-03-01 19:27:31,854 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do
+2025-03-01 19:27:32,144 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do
+2025-03-01 19:27:32,145 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do
+2025-03-01 19:27:32,154 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do, attempt 2/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do
+2025-03-01 19:27:36,027 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do
+2025-03-01 19:27:36,028 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do
+2025-03-01 19:27:36,343 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do
+2025-03-01 19:27:36,349 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do
+2025-03-01 19:27:36,387 - __main__ - ERROR - Failed to fetch https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do, attempt 3/3: 404 Client Error: Not Found for url: https://www.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do
+2025-03-01 19:28:13,711 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709672/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021e08b0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:13,711 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709323/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021e0130>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:13,711 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709483/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021d4d30>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:13,711 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709339/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021e04f0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:13,711 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709636/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021d4970>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:15,720 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709672/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021e9ac0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:15,721 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709339/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021cb850>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:15,723 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709323/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021e0520>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:15,725 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709636/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021d40d0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:15,725 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709483/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021d4ee0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,738 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709672/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709672/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021d4070>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,739 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709636/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709636/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021e9bb0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,740 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709483/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709483/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021e93a0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,744 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709339/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709339/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021e0970>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,747 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709323/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709323/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021e0490>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,751 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709182/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021faee0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,751 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709070/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021cb7c0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,751 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709067/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021f77c0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,751 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709071/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021f7ee0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:19,752 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do, attempt 1/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709064/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021f7400>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:21,770 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709182/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021fa640>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:21,773 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709067/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x102209070>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:21,776 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709064/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021fae20>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:21,776 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709070/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1022092e0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:21,777 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do, attempt 2/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709071/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021faa90>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:25,784 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709182/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709182/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021f7760>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:25,790 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709067/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709067/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021cb640>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:25,794 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709070/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709070/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021cb0a0>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:25,795 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709064/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709064/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021c1d90>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-01 19:28:25,795 - __main__ - ERROR - Failed to fetch https://www.bce.pusan.ac.kr/bbs/bce/12005/1709071/artclView.do, attempt 3/3: HTTPSConnectionPool(host='www.bce.pusan.ac.kr', port=443): Max retries exceeded with url: /bbs/bce/12005/1709071/artclView.do (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1021c1070>: Failed to resolve 'www.bce.pusan.ac.kr' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-04 14:38:29,593 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-04 14:38:29,593 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-04 14:38:29,593 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-04 14:38:29,595 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-04 14:38:29,595 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-04 14:39:20,470 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-04 14:39:20,470 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-04 14:39:20,470 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-04 14:39:20,472 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-04 14:39:20,472 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:35:05,355 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:35:05,355 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:35:05,355 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 16:35:05,357 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:35:05,357 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:35:21,818 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 16:35:21,818 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 16:35:21,819 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 16:35:21,930 - kafka.conn - INFO - Broker version identified as 2.6.0
+2025-03-06 16:35:21,930 - kafka.conn - INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2025-03-06 16:35:23,185 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 16:35:23,185 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 16:35:23,185 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 16:35:23,294 - kafka.conn - INFO - Broker version identified as 2.6.0
+2025-03-06 16:35:23,294 - kafka.conn - INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2025-03-06 16:36:55,286 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 16:36:55,286 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 16:36:55,287 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 16:36:55,391 - kafka.conn - INFO - Broker version identified as 2.6.0
+2025-03-06 16:36:55,391 - kafka.conn - INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2025-03-06 16:36:56,379 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:36:56,385 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:36:56,427 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:36:56,427 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:36:56,477 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:36:56,477 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:37:56,378 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:37:56,384 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:37:56,392 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:37:56,420 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:37:56,439 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:37:56,586 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:37:56,587 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:37:56,637 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:37:56,637 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:38:56,584 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:38:56,623 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:45:55,304 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:45:55,304 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:45:55,396 - kafka.client - INFO - Closing idle connection bootstrap-0, last active 540001 ms ago
+2025-03-06 16:45:55,397 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2025-03-06 16:45:55,408 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:45:55,409 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:46:24,343 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2025-03-06 16:46:24,343 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2025-03-06 16:46:24,625 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 16:46:24,625 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 16:46:24,625 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 16:46:24,730 - kafka.conn - INFO - Broker version identified as 2.6.0
+2025-03-06 16:46:24,730 - kafka.conn - INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2025-03-06 16:46:26,171 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:46:26,172 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:46:26,222 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:46:26,222 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:46:26,273 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:46:26,273 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:47:26,165 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:47:26,174 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:47:26,182 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:47:26,200 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:47:26,247 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:47:26,381 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:47:26,381 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:47:26,431 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:47:26,431 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:48:26,381 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:48:26,426 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:49:42,690 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2025-03-06 16:49:42,690 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2025-03-06 16:49:42,977 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 16:49:42,977 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 16:49:42,978 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 16:49:43,084 - kafka.conn - INFO - Broker version identified as 2.6.0
+2025-03-06 16:49:43,084 - kafka.conn - INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2025-03-06 16:49:44,307 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:49:44,307 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:49:44,355 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:49:44,355 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:49:44,406 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:49:44,406 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:50:44,306 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:50:44,312 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:50:44,322 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:50:44,338 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:50:44,369 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:50:44,532 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:50:44,533 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:50:44,597 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:50:44,597 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:51:44,531 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:51:44,599 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:54:28,524 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2025-03-06 16:54:28,524 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2025-03-06 16:54:28,824 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 16:54:28,825 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 16:54:28,825 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 16:54:28,931 - kafka.conn - INFO - Broker version identified as 2.6.0
+2025-03-06 16:54:28,931 - kafka.conn - INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2025-03-06 16:54:30,052 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:54:30,052 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:54:30,091 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-03-06 16:54:30,091 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-03-06 16:55:30,033 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:55:30,043 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:55:30,043 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:55:30,048 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:55:30,073 - __main__ - ERROR - Failed to send to Kafka: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+2025-03-06 16:55:38,681 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2025-03-06 16:55:38,681 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2025-03-06 17:02:51,510 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 17:02:51,511 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 17:02:51,511 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 17:02:51,630 - kafka.conn - INFO - Broker version identified as 2.6.0
+2025-03-06 17:02:51,630 - kafka.conn - INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2025-03-06 17:02:52,778 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 17:02:52,786 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 17:02:52,786 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2025-03-06 17:02:52,926 - __main__ - INFO - Sent notice to Kafka: 2025학년도 3월 도서관 이용교육 일정 안내
+2025-03-06 17:02:52,926 - __main__ - INFO - Sent notice to Kafka: 자기소개서 실전반 참가자 모집 안내
+2025-03-06 17:02:52,926 - __main__ - INFO - Sent notice to Kafka: 2025학년도 1학기 멘토스쿨 참여자 모집 안내
+2025-03-06 17:02:52,926 - __main__ - INFO - Sent notice to Kafka: 제1회 PNU릴레이 창업특강 안내
+2025-03-06 17:02:52,927 - __main__ - INFO - Sent notice to Kafka: '안바디 점수를 올려보자' 신청 안내
+2025-03-06 17:02:53,082 - __main__ - INFO - Sent notice to Kafka: 교과목 변동 안내 - 강의실 변경 / 폐강  (2.28. 14:45현재)
+2025-03-06 17:02:53,170 - __main__ - INFO - Sent notice to Kafka: 카카오 테크 캠퍼스 3기 모집(BE/FE) 안내
+2025-03-06 17:04:19,822 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2025-03-06 17:04:19,822 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2025-03-06 17:17:42,943 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 17:17:42,943 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 17:17:42,943 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 17:17:43,052 - kafka.conn - INFO - Broker version identified as 2.6.0
+2025-03-06 17:17:43,053 - kafka.conn - INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2025-03-06 17:17:44,082 - __main__ - INFO - Sent notice to Kafka: 제1회 PNU릴레이 창업특강 안내
+2025-03-06 17:17:44,083 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 17:17:44,084 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 17:17:44,084 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2025-03-06 17:17:44,105 - __main__ - INFO - Sent notice to Kafka: '안바디 점수를 올려보자' 신청 안내
+2025-03-06 17:17:44,105 - __main__ - INFO - Sent notice to Kafka: 2025학년도 3월 도서관 이용교육 일정 안내
+2025-03-06 17:17:44,138 - __main__ - INFO - Sent notice to Kafka: 자기소개서 실전반 참가자 모집 안내
+2025-03-06 17:17:44,264 - __main__ - INFO - Sent notice to Kafka: 교과목 변동 안내 - 강의실 변경 / 폐강  (2.28. 14:45현재)
+2025-03-06 17:17:44,338 - __main__ - INFO - Sent notice to Kafka: 카카오 테크 캠퍼스 3기 모집(BE/FE) 안내
+2025-03-06 17:17:44,449 - __main__ - INFO - Sent notice to Kafka: 2025학년도 1학기 멘토스쿨 참여자 모집 안내
+2025-03-06 17:18:05,972 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2025-03-06 17:18:05,972 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2025-03-06 20:32:16,236 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 20:32:16,237 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-03-06 20:32:16,237 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 20:32:16,408 - kafka.conn - INFO - Broker version identified as 2.6.0
+2025-03-06 20:32:16,408 - kafka.conn - INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+2025-03-06 20:32:17,347 - __main__ - INFO - Sent notice to Kafka: 자기소개서 실전반 참가자 모집 안내
+2025-03-06 20:32:17,349 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 20:32:17,349 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-06 20:32:17,349 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2025-03-06 20:32:17,381 - __main__ - INFO - Sent notice to Kafka: 제1회 PNU릴레이 창업특강 안내
+2025-03-06 20:32:17,403 - __main__ - INFO - Sent notice to Kafka: '안바디 점수를 올려보자' 신청 안내
+2025-03-06 20:32:17,521 - __main__ - INFO - Sent notice to Kafka: 2025학년도 1학기 멘토스쿨 참여자 모집 안내
+2025-03-06 20:32:17,531 - __main__ - INFO - Sent notice to Kafka: 2025학년도 3월 도서관 이용교육 일정 안내
+2025-03-06 20:32:17,538 - __main__ - INFO - Sent notice to Kafka: 교과목 변동 안내 - 강의실 변경 / 폐강  (2.28. 14:45현재)
+2025-03-06 20:32:17,907 - __main__ - INFO - Sent notice to Kafka: 카카오 테크 캠퍼스 3기 모집(BE/FE) 안내
+2025-03-06 21:32:19,338 - __main__ - INFO - Sent notice to Kafka: 제1회 PNU릴레이 창업특강 안내
+2025-03-06 21:32:19,339 - __main__ - INFO - Sent notice to Kafka: '안바디 점수를 올려보자' 신청 안내
+2025-03-06 21:32:19,339 - __main__ - INFO - Sent notice to Kafka: 2025학년도 1학기 멘토스쿨 참여자 모집 안내
+2025-03-06 21:32:19,347 - __main__ - INFO - Sent notice to Kafka: 2025학년도 3월 도서관 이용교육 일정 안내
+2025-03-06 21:32:19,358 - __main__ - INFO - Sent notice to Kafka: 자기소개서 실전반 참가자 모집 안내
+2025-03-06 21:32:19,524 - __main__ - INFO - Sent notice to Kafka: 교과목 변동 안내 - 강의실 변경 / 폐강  (2.28. 14:45현재)
+2025-03-06 21:32:19,627 - __main__ - INFO - Sent notice to Kafka: 카카오 테크 캠퍼스 3기 모집(BE/FE) 안내
+2025-03-06 23:13:31,897 - kafka.client - INFO - Closing idle connection 1, last active 4274259 ms ago
+2025-03-06 23:13:31,899 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2025-03-06 23:13:31,901 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-06 23:13:31,902 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-07 00:27:47,446 - kafka.client - INFO - Closing idle connection 1, last active 3555490 ms ago
+2025-03-07 00:27:47,449 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2025-03-07 00:27:47,452 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2025-03-07 00:27:47,453 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2025-03-07 00:34:50,686 - __main__ - INFO - Sent notice to Kafka: 2025학년도 3월 도서관 이용교육 일정 안내
+2025-03-07 00:34:50,686 - __main__ - INFO - Sent notice to Kafka: 2025학년도 1학기 멘토스쿨 참여자 모집 안내
+2025-03-07 00:34:50,700 - __main__ - INFO - Sent notice to Kafka: 제1회 PNU릴레이 창업특강 안내
+2025-03-07 00:34:50,703 - __main__ - INFO - Sent notice to Kafka: '안바디 점수를 올려보자' 신청 안내
+2025-03-07 00:34:50,747 - __main__ - INFO - Sent notice to Kafka: 자기소개서 실전반 참가자 모집 안내
+2025-03-07 00:34:50,929 - __main__ - INFO - Sent notice to Kafka: 교과목 변동 안내 - 강의실 변경 / 폐강  (2.28. 14:45현재)
+2025-03-07 00:34:51,000 - __main__ - INFO - Sent notice to Kafka: 카카오 테크 캠퍼스 3기 모집(BE/FE) 안내
+2025-03-07 00:38:37,356 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
+2025-03-07 00:38:37,356 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.

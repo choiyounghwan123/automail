@@ -1,0 +1,162 @@
+services:
+  crawler:
+    build: 
+      context: ./FastAPIProject1
+      dockerfile: Dockerfile
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - CRAWL_INTERVAL=3600
+    networks:
+      - app-network
+    depends_on:
+      - kafka
+  react-app:
+    build:
+      context: ./untitled
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+    networks:
+      - app-network
+  auth-service:
+    build:
+      context: ./emailService-Auth_Service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/authService
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: kmj388
+    networks:
+      - app-network
+    depends_on:
+      - mysql
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8080"
+    networks:
+      - app-network
+  subscription:
+    build:
+      context: ./subscription
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8080"
+    networks:
+      - app-network
+  apigateway:
+    build:
+      context: ./apigateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+  authorization-server:
+    build:
+      context: ./authorization-server
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8080"
+    networks:
+      - app-network
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+    networks:
+      - app-network
+  postgresql:
+    image: postgres:15
+    container_name: postgres_container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: kmj388
+      POSTGRES_PASSWORD: kmj388
+      POSTGRES_DB: subscription
+    restart: always
+    volumes:
+      - postgre_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+  email-service:
+    build:
+      context: ./email-service
+      dockerfile: Dockerfile
+    container_name: email-service
+    command: sh -c "python manage.py migrate --noinput && gunicorn email_service.wsgi:application --bind 0.0.0.0:8000"
+    ports:
+      - "8084:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=email_service.settings
+    networks:
+      - app-network
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: kmj388
+      MYSQL_DATABASE: authService
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+  redis:
+    image: redis:7.0
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-network
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: "2181"
+    networks:
+      - app-network
+  
+  kafka:
+    image: bitnami/kafka:latest
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports:
+      - "9092:9092"
+    networks:
+      - app-network
+  celery:
+    build:
+      context: ./email-service
+      dockerfile: Dockerfile
+    command: celery -A email_service worker --loglevel=info -Q email_verification_queue
+    depends_on:
+      - rabbitmq
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  redis-data:
+  postgre_data:
