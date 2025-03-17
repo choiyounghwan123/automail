@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -6,11 +6,16 @@ function Header({ isLoggedIn, setIsLoggedIn }) {
     const [isClicked, setIsClicked] = useState(false);
     const navigate = useNavigate();
 
+    // 로그아웃 함수
     const handleLogout = async () => {
         const token = localStorage.getItem("accessToken");
 
         if (!token) {
             console.error("Access token이 없습니다.");
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("refreshToken");
+            setIsLoggedIn(false);
+            navigate("/");
             return;
         }
 
@@ -25,15 +30,33 @@ function Header({ isLoggedIn, setIsLoggedIn }) {
                     },
                 }
             );
-
+        } catch (error) {
+            console.error("로그아웃 실패:", error);
+        } finally {
             localStorage.removeItem("accessToken");
             localStorage.removeItem("refreshToken");
             setIsLoggedIn(false);
             navigate("/");
-        } catch (error) {
-            console.error("로그아웃 실패:", error);
         }
     };
+
+    // Axios 인터셉터 설정
+    useEffect(() => {
+        const interceptor = axios.interceptors.response.use(
+            (response) => response,
+            (error) => {
+
+                    // JWT 만료 시 로그아웃 처리
+                    handleLogout();
+                return Promise.reject(error);
+            }
+        );
+
+        // 컴포넌트 언마운트 시 인터셉터 제거
+        return () => {
+            axios.interceptors.response.eject(interceptor);
+        };
+    }, [isLoggedIn]); // isLoggedIn이 변경될 때마다 재설정
 
     return (
         <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md border-b border-gray-200">
