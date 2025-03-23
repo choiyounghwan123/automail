@@ -7,6 +7,10 @@ logging:
 spring:
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
       globalcors:
@@ -25,15 +29,15 @@ spring:
             allowCredentials: true
       routes:
         - id: auth-service
-          uri: http://auth-service:8080
+          uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
         - id: user-service
-          uri: http://user-service:8080
+          uri: lb://user-service
           predicates:
             - Path=/api/users/**
         - id: subscription
-          uri: http://subscription:9090
+          uri: lb://subscription
           predicates:
             - Path=/api/subscriptions/**
           filters:
@@ -43,3 +47,11 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+    enabled: true
+  instance:
+    prefer-ip-address: true

@@ -115,6 +115,23 @@ DATABASES = {
         }
     }
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'DEBUG',  # DEBUG 이상 출력
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',  # DEBUG 레벨로 설정
+    },
+}
+
+
 CELERY_BROKER_URL = 'amqp://user:password@rabbitmq:5672//'
 RABBITMQ_HOST = 'rabbitmq'
 RABBITMQ_PORT = 5672

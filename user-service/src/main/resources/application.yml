@@ -16,6 +16,14 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       auto-offset-reset: earliest
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+    enabled: true
+  instance:
+    prefer-ip-address: true
+
 logging:
   level:
     org.springframework.web: DEBUG

@@ -36,7 +36,7 @@ def send_verification_email(data):
     # 3. 이메일 인증 토큰 생성
     try:
         token = EmailVerification.objects.create(email=email)
-        verification_link = f"{settings.SITE_URL}/api/email/verify?token={token.uuid}"
+        verification_link = f"localhost:8084/api/email/verify?token={token.uuid}"
     except Exception as e:
         print(f"Failed to create EmailVerification object: {e}")
         return
@@ -123,3 +123,63 @@ def send_verification_email(data):
         print(f"Verification email sent to {email}.")
     except Exception as e:
         print(f"Failed to send email to {email}: {e}")
+
+from celery import shared_task
+from django.core.mail import EmailMessage
+from django.conf import settings
+
+@shared_task
+def send_notification_email(data):
+    """
+    Kafka에서 받은 데이터를 기반으로 이메일을 보내는 Celery 태스크.
+
+    Parameters:
+        data (dict): {"title": str, "content": str, "recipients": list, "link": str (optional)}
+    """
+    try:
+        # 데이터 유효성 검사
+        title = data.get("title")
+        content = data.get("content", "")
+        recipients = data.get("recipients", [])
+        link = data.get("link", "")
+
+        if not title or not recipients:
+            print(f"Invalid data: {data}. 'title' and 'recipients' are required.")
+            return
+
+        # 이메일 내용 구성 (HTML)
+        html_content = f"""
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <title>{title}</title>
+            <style>
+                .container {{ font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; }}
+                .header {{ font-size: 24px; font-weight: bold; color: #333; }}
+                .content {{ font-size: 16px; margin: 20px 0; }}
+                .link {{ color: #4CAF50; text-decoration: none; }}
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">{title}</div>
+                <div class="content">{content}</div>
+                {"<div><a href='" + link + "' class='link'>자세히 보기</a></div>" if link else ""}
+            </div>
+        </body>
+        </html>
+        """
+
+        # 이메일 발송
+        email_message = EmailMessage(
+            subject=title,
+            body=html_content,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=recipients,
+        )
+        email_message.content_subtype = "html"
+        email_message.send()
+        print(f"Notification email sent to {recipients} with title: {title}")
+    except Exception as e:
+        print(f"Failed to send notification email: {e}")

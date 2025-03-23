@@ -2,10 +2,6 @@ import json
 import logging
 
 import pika
-from django.conf import settings
-from pika.adapters.blocking_connection import BlockingConnection
-from pika.connection import ConnectionParameters
-from emails.models import EmailVerification
 
 logging.basicConfig(level=logging.INFO)
 

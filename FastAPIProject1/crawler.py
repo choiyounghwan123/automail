@@ -1,4 +1,3 @@
-# crawler_service.py
 import time
 from concurrent.futures.thread import ThreadPoolExecutor
 import requests
@@ -15,7 +14,6 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
-print(Config.KAFKA_BOOTSTRAP_SERVERS)
 producer = KafkaProducer(
     bootstrap_servers=Config.KAFKA_BOOTSTRAP_SERVERS,
     value_serializer=lambda v: json.dumps(v).encode("utf-8")
@@ -36,15 +34,29 @@ def fetch_content(link, retries=3, backoff=2):
             else:
                 return "Failed to fetch content"
 
-def crawl_notice(notice):
+def load_last_titles():
+    try:
+        with open("last_titles.txt", "r", encoding="utf-8") as f:
+            return set(line.strip() for line in f if line.strip())
+    except FileNotFoundError:
+        return set()
+
+def save_titles(titles):
+    with open("last_titles.txt", "w", encoding="utf-8") as f:
+        for title in titles:
+            f.write(f"{title}\n")
+
+def crawl_notice(notice, last_titles):
     is_new = bool(notice.find("span", class_="newArtcl"))
     if not is_new:
         return None
 
     title = notice.find("strong").text.strip() if notice.find("strong") else "No Title"
+    if title in last_titles:
+        return None  # 중복이면 스킵
+
     link = notice.get("href", "")
     full_link = f"https://bce.pusan.ac.kr{link}" if link.startswith("/") else link
-
     content = fetch_content(full_link)
 
     notice_data = {
@@ -55,14 +67,16 @@ def crawl_notice(notice):
     }
 
     try:
-        producer.send("notices", value=notice_data)  # Kafka로 전송
+        producer.send("notices", value=notice_data)
         logger.info(f"Sent notice to Kafka: {title}")
     except Exception as e:
         logger.error(f"Failed to send to Kafka: {str(e)}")
+        return None
 
     return notice_data
 
 def crawl_notices():
+    last_titles = load_last_titles()
     try:
         response = requests.get(Config.NOTICE_URL, timeout=10)
         response.raise_for_status()
@@ -70,12 +84,15 @@ def crawl_notices():
         notices = soup.select("a.artclLinkView")
 
         notice_list = []
+        new_titles = set(last_titles)  # 기존 제목 유지
         with ThreadPoolExecutor(max_workers=5) as executor:
-            futures = [executor.submit(crawl_notice, notice) for notice in notices]
+            futures = [executor.submit(crawl_notice, notice, last_titles) for notice in notices]
             for future in futures:
                 result = future.result()
                 if result:
                     notice_list.append(result)
+                    new_titles.add(result["title"])
+        save_titles(new_titles)  # 새로운 제목 저장
         return notice_list
     except requests.RequestException as e:
         logger.error(f"Crawling failed: {str(e)}")
