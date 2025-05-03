@@ -1,11 +1,18 @@
+import os.path
 import time
+import uuid
 from concurrent.futures.thread import ThreadPoolExecutor
+from urllib.parse import urlparse
+
 import requests
 from bs4 import BeautifulSoup
 import logging
 import json
 from kafka import KafkaProducer
 from config import Config
+
+save_dir = 'images'
+os.makedirs(save_dir, exist_ok=True)  # ✅ 폴더 먼저 만들
 
 logging.basicConfig(
     level=logging.INFO,
@@ -14,10 +21,10 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
-producer = KafkaProducer(
-    bootstrap_servers=Config.KAFKA_BOOTSTRAP_SERVERS,
-    value_serializer=lambda v: json.dumps(v).encode("utf-8")
-)
+# producer = KafkaProducer(
+#     bootstrap_servers=Config.KAFKA_BOOTSTRAP_SERVERS,
+#     value_serializer=lambda v: json.dumps(v).encode("utf-8")
+# )
 
 def fetch_content(link, retries=3, backoff=2):
     for attempt in range(retries):
@@ -25,8 +32,31 @@ def fetch_content(link, retries=3, backoff=2):
             response = requests.get(link, timeout=10)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, "html.parser")
+            img_tags = soup.find_all("img")
+
+            saved_paths = []  # 저장된 경로들을 담을 리스트
+
+            for i,img in enumerate(img_tags):
+                if img.has_attr('src'):
+                    img_url = img['src']
+                    response = requests.get(img_url)
+
+                    if response.status_code == 200:
+                        path = urlparse(img_url).path
+                        ext = os.path.splitext(path)[1]
+                        filename = f'image_{uuid.uuid4().hex}{ext}'
+                        save_path = os.path.join(save_dir, filename)
+
+                        with open(f'images/{filename}', 'wb') as f:
+                            f.write(response.content)
+                        saved_paths.append(save_path)
+                        print(save_path)
+                        print(f"{filename} 저장완료")
+                    else:
+                        print(f'{img_url}')
+
             content = soup.find('div', class_='artclView').get_text(strip=True)
-            return content
+            return content,saved_paths
         except requests.RequestException as e:
             logger.error(f"Failed to fetch {link}, attempt {attempt+1}/{retries}: {str(e)}")
             if attempt < retries - 1:
@@ -57,17 +87,18 @@ def crawl_notice(notice, last_titles):
 
     link = notice.get("href", "")
     full_link = f"https://bce.pusan.ac.kr{link}" if link.startswith("/") else link
-    content = fetch_content(full_link)
+    content,saved_paths = fetch_content(full_link)
 
     notice_data = {
         "title": title,
         "link": full_link,
         "content": content,
-        "crawled_at": time.strftime("%Y-%m-%d %H:%M:%S")
+        "crawled_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "images": saved_paths if saved_paths else None
     }
 
     try:
-        producer.send("notices", value=notice_data)
+        # producer.send("notices", value=notice_data)
         logger.info(f"Sent notice to Kafka: {title}")
     except Exception as e:
         logger.error(f"Failed to send to Kafka: {str(e)}")

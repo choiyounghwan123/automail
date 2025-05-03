@@ -280,3 +280,60 @@
 2025-03-07 00:34:51,000 - __main__ - INFO - Sent notice to Kafka: 카카오 테크 캠퍼스 3기 모집(BE/FE) 안내
 2025-03-07 00:38:37,356 - kafka.producer.kafka - INFO - Closing the Kafka producer with 0 secs timeout.
 2025-03-07 00:38:37,356 - kafka.producer.kafka - INFO - Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2025-05-04 02:05:24,912 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-05-04 02:05:24,912 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-05-04 02:05:24,912 - kafka.conn - INFO - Probing node bootstrap-0 broker version
+2025-05-04 02:05:24,915 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno 8] nodename nor servname provided, or not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2025-05-04 02:05:24,915 - kafka.conn - ERROR - DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2025-05-04 02:06:12,068 - __main__ - INFO - Sent notice to Kafka: 효원상담원 양산 분원 주중(월~금) 상시 운영
+2025-05-04 02:06:12,079 - __main__ - INFO - Sent notice to Kafka: 제19회 학생포트폴리오 경진대회
+2025-05-04 02:06:12,137 - __main__ - INFO - Sent notice to Kafka: 부산대학교 개교 80주년 기념 슬로건 공모전 개최 안내
+2025-05-04 02:06:12,137 - __main__ - INFO - Sent notice to Kafka: [SW융합교육원] 25학년도 여름계절수업 'SW융합 공통 교과목' 개설
+2025-05-04 02:06:12,172 - __main__ - INFO - Sent notice to Kafka: 2025학년도 여름계절수업 교류 수학 안내[고려대 에너지신산업, 인하대]
+2025-05-04 02:06:12,297 - __main__ - INFO - Sent notice to Kafka: 2025학년도 장학재단-교육청 다담다 멘토링 참여 멘토 추가 모집 안내
+2025-05-04 02:06:12,327 - __main__ - INFO - Sent notice to Kafka: 2025학년도 효원인과 함께 읽고 싶은 책+(플러스) 안내
+2025-05-04 02:06:12,388 - __main__ - INFO - Sent notice to Kafka: 미래 DX 생활가전 리빙 솔루션 프로젝트 개최 안내
+2025-05-04 02:06:12,455 - __main__ - INFO - Sent notice to Kafka: [SW중심대학]  2025 마일스톤 챌린지
+2025-05-04 02:06:12,489 - __main__ - INFO - Sent notice to Kafka: [모집] 2025학년도 여름도약수업-기업체험형 단기인턴십/컴퓨터알고리즘실무 참가자 모집 안
+2025-05-04 02:10:00,856 - __main__ - INFO - Sent notice to Kafka: 효원상담원 양산 분원 주중(월~금) 상시 운영
+2025-05-04 02:10:00,856 - __main__ - INFO - Sent notice to Kafka: 제19회 학생포트폴리오 경진대회
+2025-05-04 02:10:00,870 - __main__ - INFO - Sent notice to Kafka: 부산대학교 개교 80주년 기념 슬로건 공모전 개최 안내
+2025-05-04 02:10:00,910 - __main__ - INFO - Sent notice to Kafka: [SW융합교육원] 25학년도 여름계절수업 'SW융합 공통 교과목' 개설
+2025-05-04 02:10:00,926 - __main__ - INFO - Sent notice to Kafka: 2025학년도 여름계절수업 교류 수학 안내[고려대 에너지신산업, 인하대]
+2025-05-04 02:10:01,060 - __main__ - INFO - Sent notice to Kafka: 2025학년도 효원인과 함께 읽고 싶은 책+(플러스) 안내
+2025-05-04 02:10:01,074 - __main__ - INFO - Sent notice to Kafka: 미래 DX 생활가전 리빙 솔루션 프로젝트 개최 안내
+2025-05-04 02:10:01,121 - __main__ - INFO - Sent notice to Kafka: 2025학년도 장학재단-교육청 다담다 멘토링 참여 멘토 추가 모집 안내
+2025-05-04 02:10:01,194 - __main__ - INFO - Sent notice to Kafka: [SW중심대학]  2025 마일스톤 챌린지
+2025-05-04 02:10:01,277 - __main__ - INFO - Sent notice to Kafka: [모집] 2025학년도 여름도약수업-기업체험형 단기인턴십/컴퓨터알고리즘실무 참가자 모집 안
+2025-05-04 02:11:16,219 - __main__ - INFO - Sent notice to Kafka: 2025학년도 여름계절수업 교류 수학 안내[고려대 에너지신산업, 인하대]
+2025-05-04 02:12:42,372 - __main__ - INFO - Sent notice to Kafka: 효원상담원 양산 분원 주중(월~금) 상시 운영
+2025-05-04 02:12:42,414 - __main__ - INFO - Sent notice to Kafka: [SW융합교육원] 25학년도 여름계절수업 'SW융합 공통 교과목' 개설
+2025-05-04 02:12:42,414 - __main__ - INFO - Sent notice to Kafka: 부산대학교 개교 80주년 기념 슬로건 공모전 개최 안내
+2025-05-04 02:12:42,419 - __main__ - INFO - Sent notice to Kafka: 2025학년도 여름계절수업 교류 수학 안내[고려대 에너지신산업, 인하대]
+2025-05-04 02:12:42,419 - __main__ - INFO - Sent notice to Kafka: 제19회 학생포트폴리오 경진대회
+2025-05-04 02:12:42,646 - __main__ - INFO - Sent notice to Kafka: 미래 DX 생활가전 리빙 솔루션 프로젝트 개최 안내
+2025-05-04 02:12:42,677 - __main__ - INFO - Sent notice to Kafka: 2025학년도 효원인과 함께 읽고 싶은 책+(플러스) 안내
+2025-05-04 02:12:42,708 - __main__ - INFO - Sent notice to Kafka: [모집] 2025학년도 여름도약수업-기업체험형 단기인턴십/컴퓨터알고리즘실무 참가자 모집 안
+2025-05-04 02:12:42,718 - __main__ - INFO - Sent notice to Kafka: [SW중심대학]  2025 마일스톤 챌린지
+2025-05-04 02:12:42,732 - __main__ - INFO - Sent notice to Kafka: 2025학년도 장학재단-교육청 다담다 멘토링 참여 멘토 추가 모집 안내
+2025-05-04 02:13:17,316 - __main__ - INFO - Sent notice to Kafka: 제19회 학생포트폴리오 경진대회
+2025-05-04 02:13:17,325 - __main__ - INFO - Sent notice to Kafka: 효원상담원 양산 분원 주중(월~금) 상시 운영
+2025-05-04 02:13:17,363 - __main__ - INFO - Sent notice to Kafka: 부산대학교 개교 80주년 기념 슬로건 공모전 개최 안내
+2025-05-04 02:13:17,390 - __main__ - INFO - Sent notice to Kafka: 2025학년도 여름계절수업 교류 수학 안내[고려대 에너지신산업, 인하대]
+2025-05-04 02:13:17,408 - __main__ - INFO - Sent notice to Kafka: [SW융합교육원] 25학년도 여름계절수업 'SW융합 공통 교과목' 개설
+2025-05-04 02:13:17,536 - __main__ - INFO - Sent notice to Kafka: 2025학년도 효원인과 함께 읽고 싶은 책+(플러스) 안내
+2025-05-04 02:13:17,587 - __main__ - INFO - Sent notice to Kafka: 미래 DX 생활가전 리빙 솔루션 프로젝트 개최 안내
+2025-05-04 02:13:17,628 - __main__ - INFO - Sent notice to Kafka: [SW중심대학]  2025 마일스톤 챌린지
+2025-05-04 02:13:17,677 - __main__ - INFO - Sent notice to Kafka: 2025학년도 장학재단-교육청 다담다 멘토링 참여 멘토 추가 모집 안내
+2025-05-04 02:13:17,689 - __main__ - INFO - Sent notice to Kafka: [모집] 2025학년도 여름도약수업-기업체험형 단기인턴십/컴퓨터알고리즘실무 참가자 모집 안
+2025-05-04 02:20:36,061 - __main__ - INFO - Sent notice to Kafka: 2025학년도 여름계절수업 교류 수학 안내[고려대 에너지신산업, 인하대]
+2025-05-04 02:21:38,904 - __main__ - INFO - Sent notice to Kafka: 2025학년도 여름계절수업 교류 수학 안내[고려대 에너지신산업, 인하대]
+2025-05-04 02:21:38,997 - __main__ - INFO - Sent notice to Kafka: 부산대학교 개교 80주년 기념 슬로건 공모전 개최 안내
+2025-05-04 02:21:39,223 - __main__ - INFO - Sent notice to Kafka: 제19회 학생포트폴리오 경진대회
+2025-05-04 02:21:39,361 - __main__ - INFO - Sent notice to Kafka: [SW융합교육원] 25학년도 여름계절수업 'SW융합 공통 교과목' 개설
+2025-05-04 02:21:39,461 - __main__ - INFO - Sent notice to Kafka: 2025학년도 효원인과 함께 읽고 싶은 책+(플러스) 안내
+2025-05-04 02:21:39,695 - __main__ - INFO - Sent notice to Kafka: 2025학년도 장학재단-교육청 다담다 멘토링 참여 멘토 추가 모집 안내
+2025-05-04 02:21:40,369 - __main__ - INFO - Sent notice to Kafka: 미래 DX 생활가전 리빙 솔루션 프로젝트 개최 안내
+2025-05-04 02:21:40,444 - __main__ - INFO - Sent notice to Kafka: 효원상담원 양산 분원 주중(월~금) 상시 운영
+2025-05-04 02:21:40,482 - __main__ - INFO - Sent notice to Kafka: [SW중심대학]  2025 마일스톤 챌린지
+2025-05-04 02:21:40,926 - __main__ - INFO - Sent notice to Kafka: [모집] 2025학년도 여름도약수업-기업체험형 단기인턴십/컴퓨터알고리즘실무 참가자 모집 안
