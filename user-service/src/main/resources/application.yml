@@ -1,3 +1,9 @@
+springDoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    urls:
+      - url: /post-service/v3/api-docs
+        name: post-service
 spring:
   rabbitmq:
     host: rabbitmq # RabbitMQ 컨테이너 이름
