@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+import axios from "axios";
 
 const fadeIn = keyframes`
   from { opacity: 0; }
@@ -74,8 +74,8 @@ const Badge = styled.span`
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: 20px;
-  background: ${(props) => (props.verified ? '#dcfce7' : '#fee2e2')};
-  color: ${(props) => (props.verified ? '#16a34a' : '#dc2626')};
+  background: ${(props) => (props.verified ? "#dcfce7" : "#fee2e2")};
+  color: ${(props) => (props.verified ? "#16a34a" : "#dc2626")};
 `;
 
 const Button = styled.button`
@@ -118,90 +118,93 @@ const Spinner = styled.div`
 `;
 
 function MyPage() {
-    const [email, setEmail] = useState('');
-    const [emailVerified, setEmailVerified] = useState(false);
-    const [subscribed, setSubscribed] = useState(false);
-    const [loading, setLoading] = useState(true);
+  const [email, setEmail] = useState("");
+  const [emailVerified, setEmailVerified] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchUserData = async () => {
-            try {
-                const token = localStorage.getItem('accessToken');
-                const response = await axios.get('http://localhost:8080/api/mypage', {
-                    headers: { Authorization: `Bearer ${token}` },
-                });
-                const { email, isActive, subscribed } = response.data.data;
-                setEmail(email);
-                setEmailVerified(isActive);
-                setSubscribed(subscribed);
-            } catch (error) {
-                console.error('사용자 데이터를 불러오는 중 오류 발생:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchUserData();
-    }, []);
-
-    const handleSendVerification = async () => {
-        try {
-            const token = localStorage.getItem('accessToken');
-            await axios.post(
-                'http://localhost:8080/api/user/verify-email',
-                {},
-                { headers: { Authorization: `Bearer ${token}` } }
-            );
-            alert('인증 메일이 발송되었습니다.');
-        } catch (error) {
-            console.error('인증 메일 발송 실패:', error);
-            alert('인증 메일 발송에 실패했습니다. 다시 시도해주세요.');
-        }
-    };
-
-    if (loading) {
-        return (
-            <PageWrapper>
-                <Card>
-                    <LoadingWrapper>
-                        <Spinner />
-                        로딩 중...
-                    </LoadingWrapper>
-                </Card>
-            </PageWrapper>
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const token = localStorage.getItem("accessToken");
+        const response = await axios.get(
+          "http://10.125.208.184:8080/api/mypage",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
         );
+        const { email, isActive, subscribed } = response.data.data;
+        setEmail(email);
+        setEmailVerified(isActive);
+        setSubscribed(subscribed);
+      } catch (error) {
+        console.error("사용자 데이터를 불러오는 중 오류 발생:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchUserData();
+  }, []);
+
+  const handleSendVerification = async () => {
+    try {
+      const token = localStorage.getItem("accessToken");
+      await axios.post(
+        "http://10.125.208.184:8080/api/user/verify-email",
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      alert("인증 메일이 발송되었습니다.");
+    } catch (error) {
+      console.error("인증 메일 발송 실패:", error);
+      alert("인증 메일 발송에 실패했습니다. 다시 시도해주세요.");
     }
+  };
 
+  if (loading) {
     return (
-        <PageWrapper>
-            <Card>
-                <Title>마이페이지</Title>
-                <Subtitle>당신의 정보를 확인하세요</Subtitle>
-
-                <InfoGrid>
-                    <Info>
-                        <Label>이메일</Label>
-                        <Value>{email}</Value>
-                    </Info>
-                    <Info>
-                        <Label>이메일 인증</Label>
-                        <Badge verified={emailVerified}>
-                            {emailVerified ? '인증됨' : '미인증'}
-                        </Badge>
-                    </Info>
-                    <Info>
-                        <Label>구독 상태</Label>
-                        <Badge verified={subscribed}>
-                            {subscribed ? '구독 중' : '비구독'}
-                        </Badge>
-                    </Info>
-                </InfoGrid>
-
-                {!emailVerified && (
-                    <Button onClick={handleSendVerification}>인증 메일 보내기</Button>
-                )}
-            </Card>
-        </PageWrapper>
+      <PageWrapper>
+        <Card>
+          <LoadingWrapper>
+            <Spinner />
+            로딩 중...
+          </LoadingWrapper>
+        </Card>
+      </PageWrapper>
     );
+  }
+
+  return (
+    <PageWrapper>
+      <Card>
+        <Title>마이페이지</Title>
+        <Subtitle>당신의 정보를 확인하세요</Subtitle>
+
+        <InfoGrid>
+          <Info>
+            <Label>이메일</Label>
+            <Value>{email}</Value>
+          </Info>
+          <Info>
+            <Label>이메일 인증</Label>
+            <Badge verified={emailVerified}>
+              {emailVerified ? "인증됨" : "미인증"}
+            </Badge>
+          </Info>
+          <Info>
+            <Label>구독 상태</Label>
+            <Badge verified={subscribed}>
+              {subscribed ? "구독 중" : "비구독"}
+            </Badge>
+          </Info>
+        </InfoGrid>
+
+        {!emailVerified && (
+          <Button onClick={handleSendVerification}>인증 메일 보내기</Button>
+        )}
+      </Card>
+    </PageWrapper>
+  );
 }
 
 export default MyPage;

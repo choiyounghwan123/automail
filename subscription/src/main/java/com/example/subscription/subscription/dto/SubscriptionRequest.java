@@ -13,6 +13,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SubscriptionRequest {
-    @NotNull(message = "frequency가 비어져있습니다.")
+    // @NotNull(message = "frequency가 비어져있습니다.")
     private Subscription.Frequency frequency;
 }

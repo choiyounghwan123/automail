@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
-
+import com.example.subscription.subscription.entity.Subscription.Frequency;
 import java.nio.file.attribute.UserPrincipal;
 
 @Service
@@ -20,7 +20,7 @@ public class SubscriptionService {
             throw new RuntimeException("이미 등록되어있습니다.");
         }
         Subscription subscription = new Subscription().builder()
-                .frequency(subscriptionRequest.getFrequency())
+                .frequency(Frequency.IMMEDIATE)
                 .email(principal.getUsername())
                 .build();
 

@@ -15,9 +15,9 @@ spring:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
       globalcors:
         cors-configurations:
-          '[/**]':
+          "[/**]":
             allowedOrigins:
-              - "http://localhost:3000"
+              - "http://10.125.208.184:3000"
             allowedMethods:
               - GET
               - POST

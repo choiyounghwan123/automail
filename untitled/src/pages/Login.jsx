@@ -22,7 +22,7 @@ function Login({ setIsLoggedIn }) {
 
         try {
             const response = await axios.post(
-                "http://localhost:8080/api/auth/login",
+                "http://10.125.208.184:8080/api/auth/login",
                 { email, password }
             );
 
