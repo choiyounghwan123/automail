@@ -40,10 +40,10 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<UserResponse> getUserByEmail(@RequestParam String email){
-        log.info(email);
+        log.info("Original email: {}", email);
         String decodedEmail = URLDecoder.decode(email, StandardCharsets.UTF_8);
-        log.info(decodedEmail);
-        UserResponse user  = userService.findbyEmail(email);
+        log.info("Decoded email: {}", decodedEmail);
+        UserResponse user = userService.findbyEmail(decodedEmail);
         return ResponseEntity.ok(user);
     }
 
@@ -63,4 +63,19 @@ public class UserController {
         }
     }
 
+    @GetMapping("/me")
+    public ResponseEntity<UserResponse> getCurrentUser(HttpServletRequest request) {
+        String email = request.getHeader("X-User-Email");
+        if (email == null || email.isEmpty()) {
+            throw new UnauthorizedException("유효한 인증정보가 없습니다.");
+        }
+        UserResponse user = userService.findbyEmail(email);
+        return ResponseEntity.ok(user);
+    }
+
+    @PostMapping("/verify/resend")
+    public ResponseEntity<ApiResponse<String>> resendVerificationEmail(@RequestBody EmailDto emailDto) {
+        userService.resendVerificationEmail(emailDto.getEmail());
+        return ResponseEntity.ok(new ApiResponse<>(true, "인증 이메일이 재전송되었습니다.", null));
+    }
 }

@@ -11,7 +11,6 @@ services:
     environment:
       - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap
 
-
   crawler:
     build: 
       context: ./FastAPIProject1
@@ -23,14 +22,39 @@ services:
       - app-network
     depends_on:
       - kafka
-  react-app:
+  frontend:
     build:
       context: ./untitled
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    volumes:
+      - ./untitled:/app
+    # environment:
+    #   NODE_ENV: production
+    command: ["npm", "start"]
+    networks:
+      - app-network
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+    networks:
+      - app-network
+  kafka:
+    image: bitnami/kafka:3.4.0
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
     environment:
-      NODE_ENV: production
+      KAFKA_ENABLE_KRAFT: no
+      KAFKA_CFG_BROKER_ID: 1
+      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CFG_LISTENERS: PLAINTEXT://:9092
+      KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      ALLOW_PLAINTEXT_LISTENER: yes
     networks:
       - app-network
   auth-service:
@@ -55,14 +79,41 @@ services:
       - "8003:8080"
     networks:
       - app-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - GRADLE_OPTS=-Dorg.gradle.jvmargs="-Xmx2048m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError"
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
   subscription:
     build:
       context: ./subscription
       dockerfile: Dockerfile
+      args:
+        - GRADLE_OPTS=-Dorg.gradle.jvmargs="-Xmx1024m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError"
     ports:
-      - "8083:8080"
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/subscription
+      - SPRING_DATASOURCE_USERNAME=kmj388
+      - SPRING_DATASOURCE_PASSWORD=kmj388
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+    depends_on:
+      - postgresql
+      - kafka
+      - eureka-server
     networks:
       - app-network
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
   apigateway:
     build:
       context: ./apigateway
@@ -71,7 +122,6 @@ services:
       - "8080:8080"
     networks:
       - app-network
-
   rabbitmq:
     image: rabbitmq:3-management
     ports:
@@ -126,17 +176,9 @@ services:
     container_name: redis
     ports:
       - "6379:6379"
-    volumes:
-      - redis-data2:/data
+
     networks:
       - app-network
-  zookeeper:
-    image: wurstmeister/zookeeper
-    ports:
-      - "2181:2181"
-    networks:
-      - app-network
-  
   kafka-consumer:
     build:
       context: ./email-service
@@ -147,28 +189,11 @@ services:
       - email-service
     networks:
       - app-network
-
-  kafka:
-    image: bitnami/kafka:3.4.0
-    depends_on:
-      - zookeeper
-    ports:
-      - "9092:9092"
-    environment:
-      KAFKA_ENABLE_KRAFT: no
-      KAFKA_CFG_BROKER_ID: 1
-      KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CFG_LISTENERS: PLAINTEXT://:9092
-      KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
-      KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      ALLOW_PLAINTEXT_LISTENER: yes
-    networks:
-      - app-network
   celery:
     build:
       context: ./email-service
       dockerfile: Dockerfile
-    command: celery -A email_service worker --loglevel=info -Q email_verification_queue,email-notifications,email-verification-tokens
+    command: celery -A email_service worker --loglevel=info -Q email_verification_queue
     depends_on:
       - rabbitmq
     networks:
@@ -176,7 +201,3 @@ services:
 networks:
   app-network:
     driver: bridge
-
-volumes:
-  mysql-data:
-  redis-data2:

@@ -17,9 +17,9 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 logging:
   level:
-    org.springframework.web: DEBUG
-    org.springframework.security: DEBUG
-    org.springframework.cloud.gateway: DEBUG
+    root: INFO
+    com.example.authservice: DEBUG
+    com.example.authservice.service.AuthService: DEBUG
 eureka:
   client:
     service-url:

@@ -1,128 +1,52 @@
 # tasks.py - 이메일 인증 관련 Celery 태스크
 from celery import shared_task
-from django.conf import settings
-from django.core.mail import EmailMessage
 from emails.models import EmailVerification
+from django.core.mail import EmailMessage, send_mail
+from django.conf import settings
+import uuid
+from datetime import timedelta
+from django.utils import timezone
+from kafka import KafkaProducer
+import json
 
+def default_expiration_time():
+    return timezone.now() + timedelta(hours=24)
 
-@shared_task
-def send_verification_email(data):
-    """
-    이메일 인증 요청을 처리하는 Celery 태스크.
-
-    Parameters:
-        data (dict or str): 인증 이메일을 전송할 데이터를 포함.
-            - dict: {"email": "example@example.com"}
-            - str: "example@example.com" (자동 변환됨)
-
-    Returns:
-        None
-    """
-
-    # 1. 데이터 타입 확인 및 변환
-    if isinstance(data, str):
-        data = {"email": data}
-
-    if not isinstance(data, dict):
-        print(f"Invalid data type: {type(data)}. Expected dict.")
-        return
-
-    # 2. 이메일 주소 추출 및 유효성 검사
-    email = data.get("email")
-    if not email:
-        print("Email not found in data.")
-        return
-
-    # 3. 이메일 인증 토큰 생성
-    try:
-        token = EmailVerification.objects.create(email=email)
-        verification_link = f"localhost:8084/api/email/verify?token={token.uuid}"
-    except Exception as e:
-        print(f"Failed to create EmailVerification object: {e}")
-        return
-
-    # 4. HTML 이메일 내용 구성
-    html_content = f"""
-    <!DOCTYPE html>
-    <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>이메일 인증</title>
-        <style>
-            .container {{
-                font-family: Arial, sans-serif;
-                max-width: 600px;
-                margin: 0 auto;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 10px;
-                background-color: #f9f9f9;
-            }}
-            .header {{
-                text-align: center;
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 20px;
-                color: #4CAF50;
-            }}
-            .content {{
-                font-size: 16px;
-                margin-bottom: 20px;
-            }}
-            .button {{
-                text-align: center;
-                margin-top: 20px;
-            }}
-            .button a {{
-                text-decoration: none;
-                background-color: #4CAF50;
-                color: white;
-                padding: 10px 20px;
-                border-radius: 5px;
-                font-size: 16px;
-                display: inline-block;
-            }}
-            .footer {{
-                margin-top: 30px;
-                text-align: center;
-                font-size: 12px;
-                color: #777;
-            }}
-        </style>
-    </head>
-    <body>
-    <div class="container">
-        <div class="header">이메일 인증 요청</div>
-        <div class="content">
-            안녕하세요,<br>
-            이메일 인증을 완료하시려면 아래 버튼을 클릭해주세요.
-        </div>
-        <div class="button">
-            <a href="{verification_link}" target="_blank">이메일 인증하기</a>
-        </div>
-        <div class="footer">
-            이 링크는 24시간 동안만 유효합니다.<br>
-            문제가 발생한 경우, 관리자에게 문의해주세요.
-        </div>
-    </div>
-    </body>
-    </html>
-    """
-
-    # 5. 이메일 발송
-    try:
-        email_message = EmailMessage(
-            subject="이메일 인증 요청",
-            body=html_content,
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            to=[email],
-        )
-        email_message.content_subtype = "html"  # HTML 형식으로 설정
-        email_message.send()
-        print(f"Verification email sent to {email}.")
-    except Exception as e:
-        print(f"Failed to send email to {email}: {e}")
+@shared_task(queue='email_verification_queue')
+def send_verification_email(email):
+    # 기존 토큰이 있다면 삭제
+    EmailVerification.objects.filter(email=email).delete()
+    
+    # 새 토큰 생성
+    token = EmailVerification.objects.create(
+        email=email,
+        expires_at=default_expiration_time()
+    )
+    
+    # Kafka로 토큰 전송
+    producer = KafkaProducer(
+        bootstrap_servers=['kafka:9092'],
+        value_serializer=lambda x: json.dumps(x).encode('utf-8')
+    )
+    
+    # 토큰 정보를 Kafka로 전송
+    token_data = {
+        'email': email,
+        'token': str(token.uuid),
+        'expires_at': token.expires_at.isoformat()
+    }
+    producer.send('email-verification-tokens', value=token_data)
+    producer.flush()
+    
+    # 이메일 발송
+    verification_link = f"http://localhost:8003/api/email/verify?token={token.uuid}"
+    send_mail(
+        '이메일 인증',
+        f'이메일 인증을 위해 다음 링크를 클릭하세요: {verification_link}',
+        settings.DEFAULT_FROM_EMAIL,
+        [email],
+        fail_silently=False,
+    )
 
 from celery import shared_task
 from django.core.mail import EmailMessage
@@ -134,7 +58,13 @@ def send_notification_email(data):
     Kafka에서 받은 데이터를 기반으로 이메일을 보내는 Celery 태스크.
 
     Parameters:
-        data (dict): {"title": str, "content": str, "recipients": list, "link": str (optional)}
+        data (dict): {
+            "title": str,
+            "content": str,
+            "recipients": list,
+            "link": str (optional),
+            "images": list (optional) - 이미지 URL 또는 base64 인코딩된 이미지 데이터
+        }
     """
     try:
         # 데이터 유효성 검사
@@ -142,10 +72,22 @@ def send_notification_email(data):
         content = data.get("content", "")
         recipients = data.get("recipients", [])
         link = data.get("link", "")
+        images = data.get("images", [])  # 이미지 리스트로 변경
 
         if not title or not recipients:
             print(f"Invalid data: {data}. 'title' and 'recipients' are required.")
             return
+
+        # 이미지 HTML 생성
+        images_html = ""
+        if images:
+            images_html = "<div class='images'>"
+            for img in images:
+                if img.startswith('data:image'):  # base64 이미지
+                    images_html += f"<img src='{img}' style='max-width: 100%; margin: 10px 0;'/>"
+                else:  # URL 이미지
+                    images_html += f"<img src='{img}' style='max-width: 100%; margin: 10px 0;'/>"
+            images_html += "</div>"
 
         # 이메일 내용 구성 (HTML)
         html_content = f"""
@@ -159,12 +101,15 @@ def send_notification_email(data):
                 .header {{ font-size: 24px; font-weight: bold; color: #333; }}
                 .content {{ font-size: 16px; margin: 20px 0; }}
                 .link {{ color: #4CAF50; text-decoration: none; }}
+                .images {{ margin: 20px 0; }}
+                .images img {{ border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }}
             </style>
         </head>
         <body>
             <div class="container">
                 <div class="header">{title}</div>
                 <div class="content">{content}</div>
+                {images_html}
                 {"<div><a href='" + link + "' class='link'>자세히 보기</a></div>" if link else ""}
             </div>
         </body>

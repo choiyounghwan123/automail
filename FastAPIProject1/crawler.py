@@ -21,10 +21,10 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
-# producer = KafkaProducer(
-#     bootstrap_servers=Config.KAFKA_BOOTSTRAP_SERVERS,
-#     value_serializer=lambda v: json.dumps(v).encode("utf-8")
-# )
+producer = KafkaProducer(
+    bootstrap_servers=Config.KAFKA_BOOTSTRAP_SERVERS,
+    value_serializer=lambda v: json.dumps(v).encode("utf-8")
+)
 
 def fetch_content(link, retries=3, backoff=2):
     for attempt in range(retries):
@@ -98,7 +98,7 @@ def crawl_notice(notice, last_titles):
     }
 
     try:
-        # producer.send("notices", value=notice_data)
+        producer.send("notices", value=notice_data)
         logger.info(f"Sent notice to Kafka: {title}")
     except Exception as e:
         logger.error(f"Failed to send to Kafka: {str(e)}")

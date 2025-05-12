@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: subscription
+  datasource:
+    url: jdbc:postgresql://localhost:5432/subscription
+    driver-class-name: org.postgresql.Driver
+    username: kmj388
+    password: kmj388
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: subscription-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+server:
+  port: 8083
+
+jwt:
+  secret-key:
+    access-token: CoVyY9hmDRjjcYpC20X106lQI+BtTXgq0EgNej0lEi0=

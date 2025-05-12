@@ -6,13 +6,15 @@ function Subscription() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const BASE_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchEmail = async () => {
       try {
         const token = localStorage.getItem("accessToken");
         const response = await axios.get(
-          "http://10.125.208.184:8080/api/users/email",
+          `${BASE_URL}/api/users/email`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -25,22 +27,47 @@ function Subscription() {
     fetchEmail();
   }, []);
 
+  useEffect(() => {
+    const checkSubscriptionStatus = async () => {
+      try {
+        const token = localStorage.getItem("accessToken");
+        const response = await axios.get(
+          `${BASE_URL}/api/subscriptions/status`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+        setIsSubscribed(response.data);
+      } catch (err) {
+        console.error("구독 상태를 확인하지 못했습니다.", err);
+      }
+    };
+    checkSubscriptionStatus();
+  }, []);
+
   const handleSubscribe = async () => {
     setLoading(true);
     setErrorMessage("");
     try {
       const token = localStorage.getItem("accessToken");
       await axios.post(
-        "http://10.125.208.184:8080/api/subscriptions",
+        `${BASE_URL}/api/subscriptions`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
       setSuccessMessage("구독 설정이 완료되었습니다!");
+      setIsSubscribed(true);
     } catch (err) {
       console.error("구독 요청 실패:", err);
-      setErrorMessage("구독 요청에 실패했습니다. 네트워크 상태를 확인하세요.");
+      if (err.response) {
+        setErrorMessage(err.response.data.message || "구독 요청에 실패했습니다.");
+      } else if (err.request) {
+        setErrorMessage("서버와 통신할 수 없습니다. 네트워크 상태를 확인해주세요.");
+      } else {
+        setErrorMessage("구독 요청 중 오류가 발생했습니다.");
+      }
     } finally {
       setLoading(false);
     }
@@ -64,43 +91,49 @@ function Subscription() {
           </p>
         </div>
 
-        <button
-          onClick={handleSubscribe}
-          disabled={loading}
-          className={`w-full py-3 px-6 rounded-lg font-semibold text-white text-lg shadow-md transition-all duration-300 ${
-            loading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg"
-          }`}
-        >
-          {loading ? (
-            <span className="flex items-center justify-center">
-              <svg
-                className="animate-spin h-5 w-5 mr-2 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                />
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8v8H4z"
-                />
-              </svg>
-              설정 중...
-            </span>
-          ) : (
-            "구독 신청"
-          )}
-        </button>
+        {isSubscribed ? (
+          <div className="text-center text-green-600 font-medium mb-4">
+            이미 구독 중입니다.
+          </div>
+        ) : (
+          <button
+            onClick={handleSubscribe}
+            disabled={loading}
+            className={`w-full py-3 px-6 rounded-lg font-semibold text-white text-lg shadow-md transition-all duration-300 ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg"
+            }`}
+          >
+            {loading ? (
+              <span className="flex items-center justify-center">
+                <svg
+                  className="animate-spin h-5 w-5 mr-2 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  />
+                </svg>
+                설정 중...
+              </span>
+            ) : (
+              "구독 신청"
+            )}
+          </button>
+        )}
 
         {successMessage && (
           <div className="mt-6 p-4 bg-green-100 border-l-4 border-green-500 text-green-700 rounded-r-lg animate-fade-in">

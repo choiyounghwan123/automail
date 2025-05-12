@@ -7,12 +7,28 @@ function Login({ setIsLoggedIn }) {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [showResendButton, setShowResendButton] = useState(false);
     const navigate = useNavigate();
+    const BASE_URL = process.env.REACT_APP_API_URL;
+
+    const handleResendVerification = async () => {
+        try {
+            setLoading(true);
+            await axios.post(`${BASE_URL}/api/users/verify/resend`, { email });
+            setError("인증 메일이 재발송되었습니다. 이메일을 확인해주세요.");
+            setShowResendButton(false);
+        } catch (err) {
+            setError("인증 메일 재발송에 실패했습니다. 다시 시도해주세요.");
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError("");
+        setShowResendButton(false);
 
         if (!email || !password) {
             setError("이메일과 비밀번호를 입력해주세요.");
@@ -22,7 +38,7 @@ function Login({ setIsLoggedIn }) {
 
         try {
             const response = await axios.post(
-                "http://10.125.208.184:8080/api/auth/login",
+                `${BASE_URL}/api/auth/login`,
                 { email, password }
             );
 
@@ -30,17 +46,23 @@ function Login({ setIsLoggedIn }) {
                 const { accessToken, refreshToken } = response.data.data;
                 localStorage.setItem("accessToken", accessToken);
                 localStorage.setItem("refreshToken", refreshToken);
-
-                // 로그인 상태 업데이트 후 리다이렉트
+                localStorage.setItem("userEmail", email);
                 setIsLoggedIn(true);
-                navigate("/", { replace: true }); // replace로 히스토리를 덮어씁니다.
+                navigate("/", { replace: true });
             }
         } catch (err) {
-            console.log(err);
-            if (err.response && err.response.data && err.response.data.message) {
-                setError(err.response.data.message);
+            if (err.response) {
+                console.log(err.response);
+                if (err.response.status === 401 && err.response.data.error === "이메일 인증이 필요합니다. 이메일을 확인해주세요.") {
+                    setError("이메일 인증이 필요합니다. 인증 메일을 확인해주세요.");
+                    setShowResendButton(true);
+                } else if (err.response.data && err.response.data.message) {
+                    setError(err.response.data.message);
+                } else {
+                    setError("이메일 또는 비밀번호가 잘못되었습니다.");
+                }
             } else {
-                setError("이메일 또는 비밀번호가 잘못되었습니다.");
+                setError("서버와의 통신에 실패했습니다.");
             }
         } finally {
             setLoading(false);
@@ -81,7 +103,21 @@ function Login({ setIsLoggedIn }) {
                         />
                     </div>
 
-                    {error && <p className="text-red-500 text-sm">{error}</p>}
+                    {error && (
+                        <div className="text-red-500 text-sm">
+                            <p>{error}</p>
+                            {showResendButton && (
+                                <button
+                                    type="button"
+                                    onClick={handleResendVerification}
+                                    className="mt-2 text-blue-500 hover:text-blue-600 underline"
+                                    disabled={loading}
+                                >
+                                    인증 메일 재발송
+                                </button>
+                            )}
+                        </div>
+                    )}
 
                     <button
                         type="submit"

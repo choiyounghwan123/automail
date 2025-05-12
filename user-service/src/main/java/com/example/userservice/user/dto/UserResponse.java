@@ -1,6 +1,5 @@
 package com.example.userservice.user.dto;
 
-
 import com.example.userservice.user.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,4 +14,5 @@ public class UserResponse {
     String email;
     String password;
     Role role;
+    Boolean isActive;
 }

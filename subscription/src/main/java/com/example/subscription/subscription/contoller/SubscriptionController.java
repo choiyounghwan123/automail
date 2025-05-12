@@ -2,6 +2,7 @@ package com.example.subscription.subscription.contoller;
 
 import com.example.subscription.common.dto.ApiResponse;
 import com.example.subscription.subscription.dto.SubscriptionRequest;
+import com.example.subscription.subscription.entity.Subscription;
 import com.example.subscription.subscription.service.SubscriptionService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -34,7 +35,14 @@ public class SubscriptionController {
     @GetMapping("/status")
     public ResponseEntity<Boolean> getSubscriptionStatus(Authentication authentication){
         User user = (User) authentication.getPrincipal();
-
         return ResponseEntity.ok(subscriptionService.isSubscribed(user));
+    }
+
+    @GetMapping("/details")
+    public ResponseEntity<ApiResponse<Subscription>> getSubscriptionDetails(Authentication authentication) {
+        User user = (User) authentication.getPrincipal();
+        Subscription subscription = subscriptionService.getSubscriptionDetails(user);
+        ApiResponse<Subscription> response = new ApiResponse<>(true, "구독 정보 조회 성공", subscription);
+        return ResponseEntity.ok(response);
     }
 }

@@ -45,9 +45,19 @@ function Header({ isLoggedIn, setIsLoggedIn }) {
         const interceptor = axios.interceptors.response.use(
             (response) => response,
             (error) => {
-
-                    // JWT 만료 시 로그아웃 처리
-                    handleLogout();
+                if (error.response && error.response.status === 401) {
+                    // 로그인 페이지에서의 401 에러는 무시
+                    if (window.location.pathname === '/login') {
+                        return Promise.reject(error);
+                    }
+                    
+                    // 토큰이 만료되었거나 유효하지 않은 경우에만 로그아웃 처리
+                    if (error.response.data && 
+                        (error.response.data.message === "토큰이 만료되었습니다." ||
+                         error.response.data.message === "유효하지 않은 토큰입니다.")) {
+                        handleLogout();
+                    }
+                }
                 return Promise.reject(error);
             }
         );
@@ -56,7 +66,7 @@ function Header({ isLoggedIn, setIsLoggedIn }) {
         return () => {
             axios.interceptors.response.eject(interceptor);
         };
-    }, [isLoggedIn]); // isLoggedIn이 변경될 때마다 재설정
+    }, []);
 
     return (
         <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md border-b border-gray-200">

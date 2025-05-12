@@ -22,7 +22,7 @@ public class Subscription {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Frequency frequency;
+    private Frequency frequency = Frequency.IMMEDIATE;
 
     @Column(nullable = false)
     private boolean isActive = true;
@@ -33,12 +33,8 @@ public class Subscription {
     @Column(nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
-
-    public enum Frequency{
-        IMMEDIATE,
-        HOURLY,
-        DAILY,
-        WEEKLY
+    public enum Frequency {
+        IMMEDIATE
     }
 
     @PrePersist

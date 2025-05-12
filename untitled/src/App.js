@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import axios from 'axios';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -9,28 +10,45 @@ import MyPage from './pages/MyPage';
 import NotFound from './pages/NotFound';
 import HomePage from "./pages/HomePage";
 import ResetPassword from "./pages/ResetPassword";
+import VerifyEmail from "./pages/VerifyEmail";
+import Subscription from "./pages/Subscription";
 
 import "./index.css";
-import Subscription from "./pages/Subscription"; // 기존 CSS 파일 유지
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(null); // 초기값 null로 설정
-    const [loading, setLoading] = useState(true); // 로딩 상태 추가
+    const [isLoggedIn, setIsLoggedIn] = useState(null);
+    const [isEmailVerified, setIsEmailVerified] = useState(false);
+    const [loading, setLoading] = useState(true);
 
-    // 로그인 상태 초기화
     useEffect(() => {
         const token = localStorage.getItem("accessToken");
         if (token) {
-            // 필요한 경우, 토큰 유효성을 확인하는 API 요청 추가
-            setIsLoggedIn(true);
+            axios.get(`${process.env.REACT_APP_API_URL}/api/users/me`, {
+                headers: { Authorization: `Bearer ${token}` }
+            })
+                .then(response => {
+                    console.log(response.data);
+                    setIsLoggedIn(true);
+                    setIsEmailVerified(response.data.isActive);
+                })
+                .catch((error) => {
+                    console.error("Token validation error:", error);
+                    setIsLoggedIn(false);
+                    setIsEmailVerified(false);
+                    localStorage.removeItem("accessToken");
+                    localStorage.removeItem("refreshToken");
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
         } else {
             setIsLoggedIn(false);
+            setIsEmailVerified(false);
+            setLoading(false);
         }
-        setLoading(false);
     }, []);
 
     if (loading) {
-        // 로딩 중일 때 CSS와 스타일을 유지한 로딩 화면 표시
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <p>로딩 중...</p>
@@ -48,10 +66,29 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route
                         path="/mypage"
-                        element={isLoggedIn ? <MyPage /> : <Navigate to="/login" replace />}
+                        element={
+                            isLoggedIn && isEmailVerified ? (
+                                <MyPage />
+                            ) : isLoggedIn ? (
+                                <Navigate to="/verify-email" replace />
+                            ) : (
+                                <Navigate to="/login" replace />
+                            )
+                        }
                     />
-                    <Route path="/subscription" element={isLoggedIn ? <Subscription /> : <Navigate to="/login" replace/>} /> {/* 구독 페이지 라우트 */}
-
+                    <Route
+                        path="/subscription"
+                        element={
+                            isLoggedIn && isEmailVerified ? (
+                                <Subscription />
+                            ) : isLoggedIn ? (
+                                <Navigate to="/verify-email" replace />
+                            ) : (
+                                <Navigate to="/login" replace />
+                            )
+                        }
+                    />
+                    <Route path="/verify-email" element={<VerifyEmail />} />
                     <Route path="/reset-password" element={<ResetPassword />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>

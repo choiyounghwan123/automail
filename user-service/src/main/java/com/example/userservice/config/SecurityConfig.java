@@ -34,7 +34,11 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/users/signup").permitAll()
-                .anyRequest().permitAll())
+                .requestMatchers("/api/email/verify").permitAll()
+                .requestMatchers("/api/email/status").permitAll()
+                .requestMatchers("/api/users/verify/resend").permitAll()
+                .requestMatchers("/api/users").permitAll()
+                .anyRequest().authenticated())
             .addFilterBefore(new JwtHeaderFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
@@ -42,7 +46,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://10.125.208.184:3000", "http://10.125.208.184:8080"));
+        config.setAllowedOrigins(List.of("http://10.125.208.184:3000", "http://10.125.208.184:8080","http://localhost:3000","http://localhost:8080"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);

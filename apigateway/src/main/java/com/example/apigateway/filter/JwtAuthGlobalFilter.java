@@ -36,7 +36,7 @@ public class JwtAuthGlobalFilter implements GlobalFilter, Ordered {
         }
 
         // 인증 제외 경로
-        if (path.equals("/api/auth/login") || path.equals("/api/users/signup")) {
+        if (path.equals("/api/auth/login") || path.equals("/api/users/signup") || path.equals("/api/users/verify/resend")) {
             log.trace("Bypassing auth for {}", path);
             return chain.filter(exchange);
         }

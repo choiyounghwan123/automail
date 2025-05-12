@@ -1,14 +1,14 @@
 package com.example.userservice.user.rabbitMQ.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
-@ToString
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class MessageEmailDto {
     private String email;
-
-    @Builder
-    public MessageEmailDto(String email){
-        this.email = email;
-    }
 }

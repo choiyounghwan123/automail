@@ -18,12 +18,14 @@ spring:
           "[/**]":
             allowedOrigins:
               - "http://10.125.208.184:3000"
+              - "http://localhost:3000"
             allowedMethods:
               - GET
               - POST
               - PUT
               - DELETE
               - OPTIONS
+              - PATCH
             allowedHeaders:
               - "*"
             allowCredentials: true

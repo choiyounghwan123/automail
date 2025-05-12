@@ -7,7 +7,7 @@ function ResetPassword() {
     const [error, setError] = useState(""); // 오류 메시지
     const [loading, setLoading] = useState(false); // 로딩 상태
     const [success, setSuccess] = useState(false); // 팝업 상태
-
+    const BASE_URL = process.env.REACT_APP_API_URL;
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage("");
@@ -16,7 +16,7 @@ function ResetPassword() {
         try {
             setLoading(true);
 
-            const response = await axios.post("http://localhost:8080/api/reset-password", {
+            const response = await axios.post(`${BASE_URL}/api/reset-password`, {
                 email,
             });
 

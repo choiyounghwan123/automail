@@ -21,6 +21,15 @@ public class GlobalExceptionHandler {
                 .body(new ApiResponse<>(false, e.getMessage(), "400"));
     }
 
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ApiResponse<String>> handleRuntimeException(RuntimeException e){
+        if (e.getMessage() != null && e.getMessage().contains("이미 존재하는 이메일입니다")) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new ApiResponse<>(false, e.getMessage(), "400"));
+        }
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ApiResponse<>(false, "서버 오류 발생", "500"));
+    }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<String >> handleInternalServerError(Exception e){

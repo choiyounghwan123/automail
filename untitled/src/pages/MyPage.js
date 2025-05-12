@@ -122,23 +122,26 @@ function MyPage() {
   const [emailVerified, setEmailVerified] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(true);
-
+  const BASE_URL = process.env.REACT_APP_API_URL;
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem("accessToken");
         const response = await axios.get(
-          "http://10.125.208.184:8080/api/mypage",
+          `${BASE_URL}/api/users/me`,
           {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `Bearer ${token}` }
           }
         );
-        const { email, isActive, subscribed } = response.data.data;
+        const { email, isActive, subscribed } = response.data;
         setEmail(email);
         setEmailVerified(isActive);
         setSubscribed(subscribed);
       } catch (error) {
         console.error("사용자 데이터를 불러오는 중 오류 발생:", error);
+        if (error.response && error.response.status === 401) {
+          window.location.href = '/login';
+        }
       } finally {
         setLoading(false);
       }
