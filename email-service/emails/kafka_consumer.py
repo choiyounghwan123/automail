@@ -15,35 +15,29 @@ def start_kafka_consumer():
                 'email-notifications',
                 'email-verification-tokens',
                 bootstrap_servers=['kafka:9092'],
-                auto_offset_reset='earliest',  # 가장 오래된 메시지부터 처리
-                enable_auto_commit=False,  # 수동 커밋으로 변경
                 group_id='email-service-group',
-                value_deserializer=lambda x: x.decode('utf-8'),
-                consumer_timeout_ms=30000,  # 타임아웃을 30초로 증가
-                max_poll_interval_ms=600000  # 폴링 간격을 10분으로 증가
+                auto_offset_reset='earliest',
+                enable_auto_commit=True,
+                session_timeout_ms=60000,  # 세션 타임아웃을 60초로 설정
+                heartbeat_interval_ms=20000,  # 하트비트 간격을 20초로 설정
+                max_poll_interval_ms=300000,  # 최대 폴링 간격을 5분으로 설정
             )
-            logger.info("Kafka consumer initialized, waiting for messages...")
+            
+            logger.info("Kafka consumer initialized and waiting for messages...")
             
             for message in consumer:
                 try:
                     logger.info("Received message from topic %s: %s", message.topic, message.value)
-                    data = json.loads(message.value)
-                    logger.info("Parsed data: %s", data)
+                    data = json.loads(message.value.decode('utf-8'))  # 여기서 JSON 디코딩
 
                     if message.topic == 'email-notifications':
-                        # Celery 태스크 실행
-                        send_notification_email.delay(data)  # 비동기 실행으로 변경
-                        logger.info("Sent data to Celery task: %s", data)
+                        # 함수를 직접 호출 (RabbitMQ 사용하지 않음)
+                        send_notification_email(data)
+                        logger.info("Called send_notification_email directly (data: %s)", data)
                     elif message.topic == 'email-verification-tokens':
                         # 토큰 정보 로깅
                         logger.info("Received verification token: %s", data)
                     
-                    # 메시지 처리 완료 후 커밋
-                    consumer.commit()
-                    logger.info("Message committed successfully")
-                    
-                except json.JSONDecodeError as e:
-                    logger.error("Failed to parse message: %s, error: %s", message.value, e)
                 except Exception as e:
                     logger.error("Error processing message: %s", e, exc_info=True)
                     

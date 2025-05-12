@@ -32,14 +32,14 @@ public class KafkaService {
 
     @KafkaHandler
     public void handleNotice(String noticeJson) throws JsonProcessingException {
-        log.info("Received message from notices topic: {}", noticeJson); // 추가
+        log.info("Received message from notices topic: {}", noticeJson);
         try {
             Notice notice = parseNotice(noticeJson);
             if (notice == null) {
                 log.warn("Received invalid notice: {}", noticeJson);
                 return;
             }
-            log.info("Parsed notice successfully: title={}", notice.getTitle()); // 추가
+            log.info("Parsed notice successfully: title={}", notice.getTitle());
             List<String> recipients = getSubscribers();
             if (sendToEmailService(notice, recipients)) {
                 log.info("Sent email notification request to Kafka: title={}, recipients={}", notice.getTitle(), recipients);
@@ -53,7 +53,7 @@ public class KafkaService {
 
     private Notice parseNotice(String noticeJson) {
         try {
-            log.debug("Parsing notice JSON: {}", noticeJson); // 추가
+            log.debug("Parsing notice JSON: {}", noticeJson);
             Notice notice = objectMapper.readValue(noticeJson, Notice.class);
             if (notice.getTitle() == null || notice.getTitle().isEmpty()) {
                 log.warn("Notice title is null or empty: {}", noticeJson);

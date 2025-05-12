@@ -193,9 +193,14 @@ services:
     build:
       context: ./email-service
       dockerfile: Dockerfile
-    command: celery -A email_service worker --loglevel=info -Q email_verification_queue
+    command: celery -A email_service worker --loglevel=info -Q email_verification_queue,email-notifications,email-verification-tokens --concurrency=4 --max-tasks-per-child=1000
+    environment:
+      - CELERY_BROKER_URL=amqp://user:password@rabbitmq:5672//
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - DJANGO_SETTINGS_MODULE=email_service.settings
     depends_on:
       - rabbitmq
+      - redis
     networks:
       - app-network
 networks:

@@ -74,6 +74,8 @@ def send_notification_email(data):
         link = data.get("link", "")
         images = data.get("images", [])  # 이미지 리스트로 변경
 
+        print(f"Processing email with images: {len(images)} images found")  # 이미지 개수 로깅
+
         if not title or not recipients:
             print(f"Invalid data: {data}. 'title' and 'recipients' are required.")
             return
@@ -82,12 +84,15 @@ def send_notification_email(data):
         images_html = ""
         if images:
             images_html = "<div class='images'>"
-            for img in images:
+            for idx, img in enumerate(images):
                 if img.startswith('data:image'):  # base64 이미지
+                    print(f"Processing base64 image {idx + 1}/{len(images)}")
                     images_html += f"<img src='{img}' style='max-width: 100%; margin: 10px 0;'/>"
                 else:  # URL 이미지
+                    print(f"Processing URL image {idx + 1}/{len(images)}: {img}")
                     images_html += f"<img src='{img}' style='max-width: 100%; margin: 10px 0;'/>"
             images_html += "</div>"
+            print("Images HTML generated successfully")
 
         # 이메일 내용 구성 (HTML)
         html_content = f"""
@@ -125,6 +130,7 @@ def send_notification_email(data):
         )
         email_message.content_subtype = "html"
         email_message.send()
-        print(f"Notification email sent to {recipients} with title: {title}")
+        print(f"Notification email sent to {recipients} with title: {title} and {len(images)} images")
     except Exception as e:
         print(f"Failed to send notification email: {e}")
+        print(f"Error details: {str(e)}")  # 더 자세한 에러 정보 출력

@@ -122,7 +122,7 @@ LOGGING = {
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
-            'level': 'DEBUG',  # DEBUG 이상 출력
+            'level': 'INFO',  # DEBUG 이상 출력
         },
     },
     'root': {
@@ -133,6 +133,10 @@ LOGGING = {
 
 
 CELERY_BROKER_URL = 'amqp://user:password@rabbitmq:5672//'
+CELERY_BROKER_HEARTBEAT = 60  # 하트비트 간격을 60초로 설정
+CELERY_BROKER_CONNECTION_TIMEOUT = 30  # 연결 타임아웃을 30초로 설정
+CELERY_BROKER_CONNECTION_RETRY = True  # 연결 재시도 활성화
+CELERY_BROKER_CONNECTION_MAX_RETRIES = 5  # 최대 재시도 횟수
 RABBITMQ_HOST = 'rabbitmq'
 RABBITMQ_PORT = 5672
 RABBITMQ_USER = 'user'
