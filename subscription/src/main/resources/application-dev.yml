@@ -2,18 +2,20 @@ spring:
   application:
     name: subscription
   datasource:
-    url: jdbc:postgresql://localhost:5432/subscription
+    url: jdbc:postgresql://postgresql:5432/subscription
     driver-class-name: org.postgresql.Driver
     username: kmj388
     password: kmj388
   jpa:
     hibernate:
       ddl-auto: update
+    show-sql: true
     properties:
       hibernate:
+        format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: kafka:9092
     consumer:
       group-id: subscription-group
       auto-offset-reset: earliest

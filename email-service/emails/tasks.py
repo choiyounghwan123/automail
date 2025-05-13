@@ -74,23 +74,24 @@ def send_notification_email(data):
         link = data.get("link", "")
         images = data.get("images", [])  # 이미지 리스트로 변경
 
-        print(f"Processing email with images: {len(images)} images found")  # 이미지 개수 로깅
-
         if not title or not recipients:
             print(f"Invalid data: {data}. 'title' and 'recipients' are required.")
             return
 
         # 이미지 HTML 생성
         images_html = ""
-        if images:
+        if images and isinstance(images, list) and len(images) > 0:
             images_html = "<div class='images'>"
             for idx, img in enumerate(images):
-                if img.startswith('data:image'):  # base64 이미지
-                    print(f"Processing base64 image {idx + 1}/{len(images)}")
-                    images_html += f"<img src='{img}' style='max-width: 100%; margin: 10px 0;'/>"
-                else:  # URL 이미지
-                    print(f"Processing URL image {idx + 1}/{len(images)}: {img}")
-                    images_html += f"<img src='{img}' style='max-width: 100%; margin: 10px 0;'/>"
+                if not img:  # 이미지가 None이거나 빈 문자열인 경우 건너뛰기
+                    continue
+                if isinstance(img, str):
+                    if img.startswith('data:image'):  # base64 이미지
+                        print(f"Processing base64 image {idx + 1}/{len(images)}")
+                        images_html += f"<img src='{img}' style='max-width: 100%; margin: 10px 0;'/>"
+                    else:  # URL 이미지
+                        print(f"Processing URL image {idx + 1}/{len(images)}: {img}")
+                        images_html += f"<img src='{img}' style='max-width: 100%; margin: 10px 0;'/>"
             images_html += "</div>"
             print("Images HTML generated successfully")
 

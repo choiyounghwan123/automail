@@ -23,7 +23,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # 이미 있을 가능성이 있는 다른 STATIC 설정 확인
-STATIC_URL = '/static/'  # 정적 파일 URL 경로
+STATIC_URL = 'static/'  # 정적 파일 URL 경로
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # 정적 파일 수집 경로
 # from django.conf.global_settings import EMAIL_BACKEND, EMAIL_HOST_PASSWORD, DEFAULT_FROM_EMAIL
 
@@ -181,6 +181,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Media files (Uploaded files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

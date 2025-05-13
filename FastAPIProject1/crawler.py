@@ -10,8 +10,10 @@ import logging
 import json
 from kafka import KafkaProducer
 from config import Config
+import base64
 
-save_dir = 'images'
+# 이미지 저장 경로를 절대 경로로 설정
+save_dir = os.path.join(os.getcwd(), 'images')
 os.makedirs(save_dir, exist_ok=True)  # ✅ 폴더 먼저 만들
 
 logging.basicConfig(
@@ -47,16 +49,29 @@ def fetch_content(link, retries=3, backoff=2):
                         filename = f'image_{uuid.uuid4().hex}{ext}'
                         save_path = os.path.join(save_dir, filename)
 
-                        with open(f'images/{filename}', 'wb') as f:
+                        with open(save_path, 'wb') as f:
                             f.write(response.content)
-                        saved_paths.append(save_path)
-                        print(save_path)
-                        print(f"{filename} 저장완료")
+                        # base64 인코딩
+                        with open(save_path, 'rb') as f:
+                            encoded = base64.b64encode(f.read()).decode('utf-8')
+                            # MIME 타입 결정
+                            if ext.lower() == '.png':
+                                mime = 'image/png'
+                            elif ext.lower() in ['.jpg', '.jpeg']:
+                                mime = 'image/jpeg'
+                            elif ext.lower() == '.gif':
+                                mime = 'image/gif'
+                            else:
+                                mime = 'application/octet-stream'
+                            base64_str = f"data:{mime};base64,{encoded}"
+                            saved_paths.append(base64_str)
+                        logger.info(f"Image saved to: {save_path}")
+                        logger.info(f"{filename} 저장완료")
                     else:
-                        print(f'{img_url}')
+                        logger.warning(f'Failed to download image: {img_url}')
 
             content = soup.find('div', class_='artclView').get_text(strip=True)
-            return content,saved_paths
+            return content, saved_paths
         except requests.RequestException as e:
             logger.error(f"Failed to fetch {link}, attempt {attempt+1}/{retries}: {str(e)}")
             if attempt < retries - 1:

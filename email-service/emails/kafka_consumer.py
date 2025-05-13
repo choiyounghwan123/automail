@@ -28,7 +28,15 @@ def start_kafka_consumer():
             for message in consumer:
                 try:
                     logger.info("Received message from topic %s: %s", message.topic, message.value)
-                    data = json.loads(message.value.decode('utf-8'))  # 여기서 JSON 디코딩
+                    # message.value가 dict면 그대로, bytes/str면 json.loads로 파싱
+                    if isinstance(message.value, dict):
+                        data = message.value
+                    elif isinstance(message.value, bytes):
+                        data = json.loads(message.value.decode('utf-8'))
+                    elif isinstance(message.value, str):
+                        data = json.loads(message.value)
+                    else:
+                        raise TypeError(f'Unsupported message.value type: {type(message.value)}')
 
                     if message.topic == 'email-notifications':
                         # 함수를 직접 호출 (RabbitMQ 사용하지 않음)
