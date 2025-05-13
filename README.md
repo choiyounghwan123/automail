@@ -10,7 +10,7 @@ AutoMail Service는 부산대학교 의생명융합공학부의 공지사항을 
 - 의생명융합공학부 홈페이지의 공지사항을 주기적으로 크롤링
 - 이미지가 포함된 이메일로 구독자에게 자동 발송
 - Docker Compose 기반으로 간편한 배포 및 유지보수 가능
-
+<img width="1462" alt="Image" src="https://github.com/user-attachments/assets/ec43e1ef-f551-47ab-af16-01727b22cd95" />
 ---
 
 ## 🚀 주요 기능
@@ -38,7 +38,7 @@ AutoMail Service는 부산대학교 의생명융합공학부의 공지사항을 
 
 ## 🏗️ 아키텍처
 
-
+![Image](https://github.com/user-attachments/assets/3e98c8e5-2b69-4b32-8f57-2ef7600a1b09)
 
 ---
 
