@@ -19,11 +19,12 @@ function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(null);
     const [isEmailVerified, setIsEmailVerified] = useState(false);
     const [loading, setLoading] = useState(true);
+    const BASE_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         const token = localStorage.getItem("accessToken");
         if (token) {
-            axios.get(`${process.env.REACT_APP_API_URL}/api/users/me`, {
+            axios.get(`${BASE_URL}/api/users/me`, {
                 headers: { Authorization: `Bearer ${token}` }
             })
                 .then(response => {

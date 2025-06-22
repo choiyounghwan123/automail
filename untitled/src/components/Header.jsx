@@ -5,6 +5,7 @@ import axios from "axios";
 function Header({ isLoggedIn, setIsLoggedIn }) {
     const [isClicked, setIsClicked] = useState(false);
     const navigate = useNavigate();
+    const BASE_URL = process.env.REACT_APP_API_URL;
 
     // 로그아웃 함수
     const handleLogout = async () => {
@@ -21,7 +22,7 @@ function Header({ isLoggedIn, setIsLoggedIn }) {
 
         try {
             await axios.post(
-                "http://localhost:8080/api/auth/logout",
+                `${BASE_URL}/api/auth/logout`,
                 {},
                 {
                     headers: {

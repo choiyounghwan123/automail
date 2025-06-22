@@ -153,7 +153,7 @@ function MyPage() {
     try {
       const token = localStorage.getItem("accessToken");
       await axios.post(
-        "http://10.125.208.184:8080/api/user/verify-email",
+        `${BASE_URL}/api/user/verify-email`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

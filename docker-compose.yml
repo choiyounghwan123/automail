@@ -32,9 +32,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      NODE_ENV: production
+      - NODE_ENV=production
+      - REACT_APP_API_URL=http://localhost:8080
     networks:
       - app-network
+    depends_on:
+      - apigateway
   auth-service:
     build:
       context: ./emailService-Auth_Service
