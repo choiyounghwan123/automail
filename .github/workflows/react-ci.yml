@@ -1,7 +1,7 @@
 name: CI for React
 
 on:
-  phsh:
+  push:
     paths:
       - 'untitled/**'
 jobs:
