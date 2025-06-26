@@ -4,6 +4,10 @@ on:
   push:
     paths:
       - 'untitled/**'
+  pull_request:
+    paths:
+      - 'untitled/**'
+
 jobs:
   build:
     runs-on: ubuntu-latest
