@@ -1,4 +1,4 @@
-name: CI - User Service
+name: CI - apigateway 
 
 on:
   push:
@@ -6,22 +6,22 @@ on:
       - main
       - release/*
       - develop
-    paths: 'user-service/**'
+    paths: 'apigateway/**'
   pull_request:
     branches:
       - main
       - release/*
       - develop
     paths:
-      - 'user-service/**'
+      - 'apigateway/**'
 
 jobs:
-  build-user-service:
+  build-apigateway:
     runs-on: ubuntu-latest
 
     defaults:
       run:
-        working-directory: user-service
+        working-directory: apigateway
     steps:
     - uses: actions/checkout@v4
 

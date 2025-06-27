@@ -2,11 +2,19 @@ name: CI for React
 
 on:
   push:
+    branches:
+      - main
+      - release/*
+      - develop
     paths:
       - 'untitled/**'
   pull_request:
+    branches:
+      - main
+      - release/*
+      - develop
     paths:
-      - 'untitled/**'
+      - 'frontend/**'
 
 jobs:
   build:
