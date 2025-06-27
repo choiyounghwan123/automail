@@ -22,7 +22,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: untitled
+        working-directory: frontend
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
