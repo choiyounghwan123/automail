@@ -1,0 +1,34 @@
+name: CD for React
+
+on:
+  workflow_run:
+    workflows: ["CI for React"]
+    types:
+      - completed
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+      - name: Pull latest image from Docker Hub
+        run: |
+          docker pull my-react-app:latest
+
+      - name: Deploy Container
+        run: |
+          # 기존 컨테이너 중지 및 제거
+          docker stop react-app || true
+          docker rm react-app || true
+          
+          # 새 컨테이너 실행
+          docker run -d --name react-app -p 8080:80 my-react-app:latest
+
+      - name: Health Check
+        run: |
+          sleep 5
+          curl -f http://localhost:8080 || exit 1
+          echo "Deployment successful! App is running on port 8080"
