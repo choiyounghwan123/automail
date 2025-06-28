@@ -1,4 +1,4 @@
-name: CI - User Service
+name: CI - Subscription Service
 
 on:
   push:
@@ -6,22 +6,22 @@ on:
       - main
       - release/*
       - develop
-    paths: 'user-service/**'
+    paths: 'subscription/**'
   pull_request:
     branches:
       - main
       - release/*
       - develop
     paths:
-      - 'user-service/**'
+      - 'subscription/**'
 
 jobs:
-  build-user-service:
+  build-subscription:
     runs-on: ubuntu-latest
 
     defaults:
       run:
-        working-directory: user-service
+        working-directory: subscription
     steps:
     - uses: actions/checkout@v4
 

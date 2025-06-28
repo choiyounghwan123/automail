@@ -2,11 +2,19 @@ name: CI for React
 
 on:
   push:
+    branches:
+      - main
+      - release/*
+      - develop
     paths:
       - 'untitled/**'
   pull_request:
+    branches:
+      - main
+      - release/*
+      - develop
     paths:
-      - 'untitled/**'
+      - 'frontend/**'
 
 jobs:
   build:
@@ -14,7 +22,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: untitled
+        working-directory: frontend
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
