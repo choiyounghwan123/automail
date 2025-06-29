@@ -52,6 +52,7 @@ jobs:
       - name: Build Docker image
         if: github.ref == 'refs/heads/main'
         run:  |
+          echo "${{secrets.DOCKER_USERNAME}}"
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-8)
           docker build -t ${{secrets.DOCKER_USERNAME}}/my-react-app:$SHORT_SHA .
           docker tag ${{secrets.DOCKER_USERNAME}}/my-react-app:$SHORT_SHA my-react-app:latest
