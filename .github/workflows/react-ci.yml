@@ -62,31 +62,27 @@ jobs:
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-8)
           docker push ${{secrets.DOCKER_USERNAME}}/my-react-app:$SHORT_SHA
           docker push ${{secrets.DOCKER_USERNAME}}/my-react-app:latest
-      - name: Comment on success
+      - name: Comment on Success
         if: success()
-        uses: actions/github-script@v6
+        uses: thollander/actions-comment-pull-request@v3
         with:
-          script: |
-            github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: `✅ **React CI Passed!**
-        
-            🎉 All tests are passing
-            📊 Build completed successfully
-            🚀 Ready for deployment`
-            });
-      - name: Comment on failure
+          message: |
+            ## ✅ React CI Passed!
+      
+            All tests are passing 🎉
+            Ready for review!
+          comment-tag: ci-status
+
+      - name: Comment on Failure  
         if: failure()
-        uses: actions/github-script@v6
+        uses: thollander/actions-comment-pull-request@v3
         with:
-          script: |
-            github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: `❌ **React CI Failed**
+          message: |
+            ## ❌ React CI Failed
+      
+            Please check the [logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          comment-tag: ci-status
+
         
             ⚠️ Some tests are failing
             🔍 Please check the [workflow logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
