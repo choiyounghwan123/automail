@@ -62,4 +62,34 @@ jobs:
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-8)
           docker push ${{secrets.DOCKER_USERNAME}}/my-react-app:$SHORT_SHA
           docker push ${{secrets.DOCKER_USERNAME}}/my-react-app:latest
+      - name: Comment on success
+        if: success()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `✅ **React CI Passed!**
+        
+            🎉 All tests are passing
+            📊 Build completed successfully
+            🚀 Ready for deployment`
+            });
+      - name: Comment on failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `❌ **React CI Failed**
+        
+            ⚠️ Some tests are failing
+            🔍 Please check the [workflow logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            🛠️ Fix the issues and push again`
+            });
         
