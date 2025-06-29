@@ -54,8 +54,7 @@ jobs:
         run:  |
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-8)
           docker build -t ${{secrets.DOCKER_USERNAME}}/my-react-app:$SHORT_SHA .
-          docker tag ${{secrets.DOCKER_USERNAME}}/my-react-app:$SHORT_SHA my-react-app:latest
-      
+          docker tag $USERNAME/my-react-app:$SHORT_SHA $USERNAME/my-react-app:latest      
       - name: Push to Docker Registry
         if: github.ref == 'refs/heads/main'
         run: |
