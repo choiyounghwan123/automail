@@ -1,0 +1,13 @@
+# merge-gatekeeper.yml (모니터링만 담당)
+name: Merge Gatekeeper
+on:
+  pull_request:
+
+jobs:
+  merge-gatekeeper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: upsidr/merge-gatekeeper@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # 다른 Job들의 상태만 체크, 실행을 방해하지 않음
